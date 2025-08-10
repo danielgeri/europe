@@ -1,94 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Europe Family Itinerary</title>
-<style>
-  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background: #f9f9f9; }
-  h1, h2 { color: #333; }
-  .day { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-  ul { list-style: none; padding: 0; }
-  li { margin-bottom: 8px; }
-  .venue { font-weight: bold; }
-  .desc { color: #555; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Europe Family Trip — Paris · San Sebastián · Barcelona (Aug 29–Sep 11)</title>
+  <style>
+    :root{--accent:#0f766e;--muted:#6b7280;--card:#ffffff;--bg:#f8fafc;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+    .container{max-width:980px;margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    h1{margin:0;font-size:1.35rem}
+    .meta{color:var(--muted);font-size:0.95rem}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.06);margin-top:18px}
+    .grid{display:grid;grid-template-columns:1fr 300px;gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    section h2{margin:0 0 8px 0}
+    .day{border-left:4px solid var(--accent);padding:12px 16px;border-radius:8px;background:#fbfdfe;margin-bottom:14px}
+    .sub{color:var(--muted);font-size:0.95rem;margin-bottom:6px}
+    ul{margin:8px 0 12px 18px}
+    .restaurants li{margin-bottom:6px}
+    .chip{display:inline-block;background:#ecfeff;color:#064e3b;padding:6px 10px;border-radius:999px;font-weight:600;font-size:0.85rem}
+    .birthday{background:linear-gradient(90deg,#fff7ed,#fffbeb);border:1px solid #fde68a}
+    .print{background:transparent;border:1px dashed var(--muted);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+    footer{color:var(--muted);font-size:0.9rem;margin-top:18px}
+    .checklist li{margin-bottom:6px}
+  </style>
 </head>
 <body>
-<h1>Europe Family Itinerary</h1>
-<p>Moderate-pace itinerary with sightseeing, rest times for toddlers, and specific restaurant options tailored for picky MIL, two families, two 1-year-olds, and a 4-year-old. Includes “upscale-but-relaxed” birthday dinner on Sept 1 in Paris.</p>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Europe Family Trip Itinerary</h1>
+        <div class="meta">Paris · San Sebastián · Barcelona — Aug 29 → Sep 11 — Moderately paced • Birthday: Sept 1 (upscale-but-relaxed)</div>
+      </div>
+      <div style="text-align:right">
+        <div class="chip">Family Trip</div>
+        <div style="margin-top:8px"><button class="print" onclick="window.print()">Print / Save as PDF</button></div>
+      </div>
+    </header>
 
-<div class="day">
-  <h2>Saturday, Aug 30 – Arrival in Paris</h2>
-  <ul>
-    <li><span class="venue">Hotel Check-in</span> – Near the Seine.</li>
-    <li><span class="venue">Stroll along Île de la Cité</span> – Notre-Dame, Sainte-Chapelle.</li>
-    <li><span class="venue">Le Saint Régis</span> <span class="desc">(classic French bistro; kid-friendly service)</span></li>
-    <li><span class="venue">Les Philosophes</span> <span class="desc">(great onion soup; casual, good for picky eaters)</span></li>
-  </ul>
-</div>
+    <div class="grid">
+      <main>
+        <div class="card">
+          <section>
+            <h2>Overview & Approach</h2>
+            <p class="sub">Moderate pace: 1–2 main activities per day, afternoon downtime for naps, stroller-friendly routes where possible. Meals include 2–3 restaurant options per meal so you can choose by mood.</p>
+            <p class="sub">Family profile: mother-in-law (picky), two families, one 4‑year‑old, two 1‑year‑olds. Restaurants flagged for kid-friendliness and reservation tips.</p>
+          </section>
 
-<div class="day">
-  <h2>Sunday, Aug 31 – Paris Sights</h2>
-  <ul>
-    <li><span class="venue">Eiffel Tower Morning Visit</span></li>
-    <li><span class="venue">Lunch at Café Constant</span> <span class="desc">(upscale casual French; manageable portions, warm atmosphere)</span></li>
-    <li><span class="venue">Afternoon Nap Break</span></li>
-    <li><span class="venue">Tuileries Garden</span> – Carousel & playground for kids.</li>
-    <li><span class="venue">Dinner: Chez Janou</span> <span class="desc">(lively Provençal; broad menu, great for groups)</span></li>
-  </ul>
-</div>
+          <section>
+            <h2>Trip Calendar — Day-by-day</h2>
 
-<div class="day">
-  <h2>Monday, Sept 1 – Birthday in Paris</h2>
-  <ul>
-    <li><span class="venue">Morning at Musée d’Orsay</span></li>
-    <li><span class="venue">Lunch at La Fontaine de Mars</span> <span class="desc">(charming, upscale-but-relaxed; Obama ate here)</span></li>
-    <li><span class="venue">Rest at hotel</span></li>
-    <li><span class="venue">Evening Seine River stroll</span></li>
-    <li><span class="venue">Birthday Dinner at Les Ombres</span> <span class="desc">(beautiful Eiffel Tower views; refined but welcoming)</span></li>
-  </ul>
-</div>
+            <div class="day">
+              <strong>Fri, Aug 29 — Travel</strong>
+              <div class="sub">SFO → Paris (CDG). United Airlines MZXXVE • Departs 2:40 PM</div>
+              <ul>
+                <li>Tip: bulkhead seats help with toddlers and diaper changes.</li>
+              </ul>
+            </div>
 
-<div class="day">
-  <h2>Tuesday, Sept 2 – Travel to San Sebastián</h2>
-  <ul>
-    <li><span class="venue">Check into hotel</span></li>
-    <li><span class="venue">La Concha Beach stroll</span></li>
-    <li><span class="venue">Tapas crawl: Gandarias</span> <span class="desc">(quality pintxos; bustling but organized)</span>, <span class="venue">La Cuchara de San Telmo</span> <span class="desc">(creative tapas; famous for foie)</span>, <span class="venue">Borda Berri</span> <span class="desc">(hearty, melt-in-your-mouth veal cheeks)</span></li>
-  </ul>
-</div>
+            <div class="day">
+              <strong>Sat, Aug 30 — Arrival & Saint‑Germain (Paris)</strong>
+              <div class="sub">Land CDG 10:25 AM → hotel: 9 Rue Racine (6th Arr.)</div>
+              <ul>
+                <li>Morning: check-in / Luxembourg Gardens (playground, puppet theater).</li>
+                <li>Lunch options:
+                  <ul class="restaurants">
+                    <li><strong>Le Relais Saint‑Germain / Le Comptoir</strong> — reliable bistro, near your hotel; easy for picky eaters.</li>
+                    <li><strong>Bread & Roses</strong> or <strong>La Caféothèque</strong> — bakery / light options for toddlers.</li>
+                  </ul>
+                </li>
+                <li>Afternoon: Seine riverside + Notre‑Dame viewpoint; hotel rest.</li>
+                <li>Dinner options:
+                  <ul class="restaurants">
+                    <li><strong>Le Coupe‑Chou</strong> — cozy old‑Paris bistro (calm, comfortable).</li>
+                    <li>Ask concierge for a quiet neighborhood bistro.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
-<div class="day">
-  <h2>Wednesday, Sept 3 – San Sebastián</h2>
-  <ul>
-    <li><span class="venue">Monte Igueldo funicular</span> – Views + kids rides.</li>
-    <li><span class="venue">Lunch: Rekondo</span> <span class="desc">(Basque cuisine; massive wine cellar)</span></li>
-    <li><span class="venue">Afternoon siesta</span></li>
-    <li><span class="venue">Old Town wandering</span></li>
-    <li><span class="venue">Dinner: Bar Nestor</span> <span class="desc">(steak & tomato salad legend; small menu perfect for picky eaters)</span></li>
-  </ul>
-</div>
+            <div class="day">
+              <strong>Sun, Aug 31 — Louvre / Montmartre (Paris)</strong>
+              <div class="sub">Classic things with optional museum time; keep it flexible for naps.</div>
+              <ul>
+                <li>Morning: Louvre courtyard & Tuileries (or Musée d'Orsay if preferred).</li>
+                <li>Lunch options: <strong>Café Marly</strong> (scenic) or <strong>Le Fumoir</strong>.</li>
+                <li>Afternoon: Montmartre / Sacré‑Coeur (funicular) or hotel rest.</li>
+                <li>Dinner: Seine cruise + casual dinner OR neighborhood bistro (La Jacobine).</li>
+              </ul>
+            </div>
 
-<div class="day">
-  <h2>Thursday, Sept 4 – Barcelona Arrival</h2>
-  <ul>
-    <li><span class="venue">Hotel check-in</span></li>
-    <li><span class="venue">Late lunch: El Xampanyet</span> <span class="desc">(iconic cava & tapas; energetic but family-friendly)</span></li>
-    <li><span class="venue">Evening stroll in El Born</span></li>
-    <li><span class="venue">Dinner: Cal Pep</span> <span class="desc">(fresh seafood tapas; lively counter seating)</span></li>
-  </ul>
-</div>
+            <div class="day birthday">
+              <strong>Mon, Sept 1 — Birthday day (Paris)</strong>
+              <div class="sub">Slow morning, optional light activity. Special dinner: upscale-but-relaxed.</div>
+              <ul>
+                <li>Morning & afternoon: relaxed — pastry breakfast, light stroll or private small activity (Seine cruise or pastry workshop).</li>
+                <li><strong>Birthday Dinner — Recommended:</strong> <em>Les Ombres</em> (rooftop with Eiffel Tower view). Book window table, mention birthday and toddlers.</li>
+                <li>Alternatives: <em>Le Coupe‑Chou</em> (cosy) or a small fine bistro for intimacy.</li>
+              </ul>
+            </div>
 
-<div class="day">
-  <h2>Friday, Sept 5 – Barcelona</h2>
-  <ul>
-    <li><span class="venue">Morning: Sagrada Família</span></li>
-    <li><span class="venue">Lunch: Cervecería Catalana</span> <span class="desc">(well-rounded tapas menu; good for sharing)</span></li>
-    <li><span class="venue">Afternoon Park Güell</span></li>
-    <li><span class="venue">Dinner: Tapeo</span> <span class="desc">(modern tapas; smaller, cozy setting)</span></li>
-  </ul>
-</div>
+            <div class="day">
+              <strong>Tue, Sept 2 — Paris → Hendaye (TGV) → San Sebastián</strong>
+              <div class="sub">TGV departs 12:11 PM • Arrives Hendaye 4:47 PM • Local train to San Sebastián</div>
+              <ul>
+                <li>Check-in: Easo Kalea, 27 (Old Town).</li>
+                <li>Dinner: <strong>Casa Gandarias</strong> (sit-down pintxos) or <strong>Bodegón Alejandro</strong> (traditional Basque cooking).</li>
+              </ul>
+            </div>
 
+            <div class="day">
+              <strong>Wed, Sept 3 — San Sebastián (La Concha & Parte Vieja)</strong>
+              <div class="sub">Beach morning + Old Town pintxos.</div>
+              <ul>
+                <li>Morning: La Concha promenade, playground.</li>
+                <li>Lunch options: <strong>Bar Nestor</strong> (tomato, steak, tortilla — small; go early) or <strong>Gandarias</strong>.</li>
+                <li>Afternoon: Monte Urgull walk or hotel nap.</li>
+                <li>Dinner: <strong>La Viña</strong> (famous cheesecake) or <strong>Bodegón Alejandro</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Thu, Sept 4 — San Sebastián (market + Aquarium)</strong>
+              <div class="sub">Market visit and calm afternoon.</div>
+              <ul>
+                <li>Morning: Mercado de la Bretxa (San Martín Market).</li>
+                <li>Lunch: market cafés or Bar La Cepa.</li>
+                <li>Afternoon: Aquarium or Ondarreta beach.</li>
+                <li>Dinner: Casa Urola or similar Old Town sit-down.</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Fri, Sept 5 — Day trip: Biarritz or Getaria</strong>
+              <div class="sub">Choose based on preferred vibe: dramatic coastline (Biarritz) or peaceful fishing village (Getaria).</div>
+              <ul>
+                <li>Getaria: excellent waterfront grilled fish restaurants.</li>
+                <li>Biarritz: seaside promenade and brasseries near the casino.</li>
+                <li>Tip: consider renting a car for flexibility with toddlers.</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Sat, Sept 6 — San Sebastián (final day)</strong>
+              <div class="sub">Last strolls and favorite pintxos; pack.</div>
+              <ul>
+                <li>Morning: final pintxos crawl / souvenir shopping in Parte Vieja.</li>
+                <li>Lunch: repeat a favorite (Bar Nestor or Gandarias).</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Sun, Sept 7 — Fly to Barcelona</strong>
+              <div class="sub">Vueling VY2487 • Departs 5:55 PM • Arrives BCN 7:00 PM • Lodging: Avinguda Diagonal, 438</div>
+              <ul>
+                <li>Evening dinner options: <strong>Cervecería Catalana</strong> (tapas) or <strong>Can Culleretes</strong> (historic Catalan)</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Mon, Sept 8 — Barcelona (Sagrada Família & Park Güell)</strong>
+              <div class="sub">Gaudí day — book tickets in advance; early morning for Sagrada Família.</div>
+              <ul>
+                <li>Lunch: <strong>La Paradeta</strong> (seafood market style) or <strong>Tapaç 24</strong>.</li>
+                <li>Dinner: <strong>Cinc Sentits</strong> (upscale tasting) or <strong>Cal Pep</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Tue, Sept 9 — Gothic Quarter & Barceloneta</strong>
+              <div class="sub">La Boqueria morning + beach afternoon.</div>
+              <ul>
+                <li>Lunch: <strong>El Xampanyet</strong>, <strong>Quimet & Quimet</strong> (fast, tasty tapas).</li>
+                <li>Dinner: <strong>Can Majó</strong> (seafood by the water) or <strong>Bodega 1900</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="day">
+              <strong>Wed, Sept 10 — Flex day (Barcelona)</strong>
+              <div class="sub">Visit favorites again or choose a family activity: Aquarium, bike ride, cooking class.</div>
+            </div>
+
+            <div class="day">
+              <strong>Thu, Sept 11 — Barcelona → SFO</strong>
+              <div class="sub">Iberia J5BFD • Departs 2:05 PM — allow airport time for toddlers.</div>
+            </div>
+
+          </section>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <section>
+            <h2>Important Reservations & Notes</h2>
+            <ul>
+              <li><strong>Les Ombres</strong> — birthday rooftop in Paris: request Eiffel-facing table; book early.</li>
+              <li><strong>Arzak</strong> (San Sebastián) — iconic if you want a top culinary experience; reserve well in advance.</li>
+              <li><strong>Cinc Sentits</strong> (Barcelona) — reserve for tasting menu if you want a special meal.</li>
+              <li>For pintxos bars (Bar Nestor, Casa Gandarias, La Viña) go early or choose midday when less crowded.</li>
+              <li>Always request high chairs and note toddlers when booking.
+            </ul>
+          </section>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Quick Logistics</h3>
+          <p class="sub">Train & flight highlights:</p>
+          <ul>
+            <li>Aug 29 — United SFO → CDG • Departs 2:40 PM (MZXXVE)</li>
+            <li>Sept 2 — TGV Paris → Hendaye • Departs 12:11 PM (RAWQ82) • Arrives 4:47 PM</li>
+            <li>Sept 7 — Vueling EAS → BCN • Departs 5:55 PM (VY2487)</li>
+            <li>Sept 11 — Iberia BCN → SFO • Departs 2:05 PM (J5BFD)</li>
+          </ul>
+          <hr>
+          <h3>Addresses</h3>
+          <p class="sub">Hotels / Lodging</p>
+          <ul>
+            <li>Paris: <strong>9 Rue Racine, 75006 Paris (Saint‑Germain / Odéon)</strong></li>
+            <li>San Sebastián: <strong>Easo Kalea, 27 (Parte Vieja)</strong></li>
+            <li>Barcelona: <strong>Avinguda Diagonal, 438</strong></li>
+          </ul>
+          <hr>
+          <h3>Packing Checklist</h3>
+          <ul class="checklist">
+            <li>Passports (2 copies) & travel insurance</li>
+            <li>Light stroller + compact carrier</li>
+            <li>Nightlight, favorite small toys, snacks</li>
+            <li>Outlet adapters (EU) & portable battery pack</li>
+            <li>Printed reservations & confirmations</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Birthday: Sept 1 — Quick Plan</h3>
+          <p class="sub">Morning: relaxed; Afternoon: optional pastry workshop or short private Seine cruise; Evening: Les Ombres rooftop dinner (Eiffel view).</p>
+          <p style="font-size:0.95rem;margin-top:8px">If you'd like, I can draft a reservation message to Les Ombres and provide suggested wording mentioning toddlers and the birthday.</p>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      Need edits? Update pacing, swap specific restaurants, or add reservation text and I will adjust the single-page itinerary for you.
+    </footer>
+  </div>
 </body>
 </html>
