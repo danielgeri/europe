@@ -1,0 +1,160 @@
+/*
+  Core Layout and Body Styling
+  ---------------------------------
+  These rules establish the foundational layout, ensuring the map
+  fills the entire viewport and removing default browser margins.
+*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden; /* Prevents scrollbars on the body itself */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    z-index: 1; /* Ensure map is the base layer */
+}
+
+/*
+  Sidebar Styling
+  ---------------------------------
+  The sidebar is positioned absolutely on top of the map.
+  It has a fixed width, background, and shadow to lift it visually.
+*/
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000; /* High z-index to appear above the map */
+    box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar-content {
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/*
+  UI Element and Typography Styling
+  ---------------------------------
+  Styling for headings, lists, and list items within the sidebar
+  for readability and a clean hierarchy.
+*/
+#sidebar h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#sidebar h3 {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar li {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-size: 1em;
+    color: #444;
+}
+
+/*
+  Interaction Styling
+  ---------------------------------
+  Provides visual feedback for user actions like hovering and selecting an item.
+*/
+#sidebar li:hover {
+    background-color: #f0f0f0;
+}
+
+/* The.active class is added by JavaScript to highlight the selected item */
+#sidebar li.active {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/*
+  Custom Leaflet Pop-up Styling
+  ---------------------------------
+  Overrides default Leaflet styles to match the application's theme.
+*/
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.leaflet-popup-content {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.leaflet-popup-content h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.leaflet-popup-content p {
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+/*
+  Responsive Design with Media Queries
+  ---------------------------------
+  Adjusts the layout for smaller screens (e.g., tablets and mobile phones).
+  On screens narrower than 768px, the sidebar becomes narrower.
+*/
+@media (max-width: 768px) {
+    #sidebar {
+        width: 280px;
+    }
+    
+    #sidebar h2 {
+        font-size: 1.3em;
+    }
+
+    #sidebar li {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* On very small screens, the sidebar could be hidden by default
+       and toggled with a button. For this implementation, we simply
+       reduce its width further to preserve map visibility. */
+    #sidebar {
+        width: 100%;
+        height: 40%; /* Make it a bottom sheet */
+        top: auto;
+        bottom: 0;
+        box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.2);
+    }
+}
