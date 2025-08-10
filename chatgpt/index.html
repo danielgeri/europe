@@ -1,214 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Europe Family Trip — Interactive Itinerary</title>
-  <style>
-    :root{--bg:#f7fafc;--card:#fff;--accent:#0b74de;--muted:#6b7280}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.4;background:var(--bg);margin:0;padding:20px}
-    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-    h1{font-size:20px;margin:0}
-    .layout{display:grid;grid-template-columns:360px 1fr;gap:20px}
-    .panel{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(11,20,40,0.06)}
-    .search{display:flex;gap:8px;margin-bottom:12px}
-    input[type=text]{flex:1;padding:8px;border-radius:8px;border:1px solid #e5e7eb}
-    .filters{display:flex;gap:8px;flex-wrap:wrap}
-    button{background:var(--accent);color:#fff;border:none;padding:8px 10px;border-radius:8px;cursor:pointer}
-    .list{max-height:66vh;overflow:auto;padding-right:6px}
-    .item{border-bottom:1px dashed #eef2f7;padding:10px 0}
-    .item h3{margin:0;font-size:15px}
-    .muted{color:var(--muted);font-size:13px}
-    .day{margin-bottom:10px}
-    .badge{display:inline-block;background:#eef6ff;color:#0b63c9;padding:4px 8px;border-radius:999px;font-size:12px;margin-left:8px}
-    .content h2{margin-top:0}
-    .grid-two{display:grid;grid-template-columns:1fr 320px;gap:12px}
-    .card-row{display:flex;gap:8px;flex-wrap:wrap}
-    a.addr{color:var(--accent);text-decoration:none}
-    footer{margin-top:12px;color:var(--muted);font-size:13px}
-    .cta{margin-top:10px}
-    .download{background:#111827}
-    pre{white-space:pre-wrap}
-    @media (max-width:900px){.layout{grid-template-columns:1fr} .grid-two{grid-template-columns:1fr} }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Europe Family Itinerary</title>
+<style>
+  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background: #f9f9f9; }
+  h1, h2 { color: #333; }
+  .day { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+  ul { list-style: none; padding: 0; }
+  li { margin-bottom: 8px; }
+  .venue { font-weight: bold; }
+  .desc { color: #555; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Europe Family Trip — Paris • San Sebastián • Barcelona</h1>
-    <div class="muted">Moderate pace • Birthday: Sep 1 (Paris — upscale but relaxed)</div>
-  </header>
+<h1>Europe Family Itinerary</h1>
+<p>Moderate-pace itinerary with sightseeing, rest times for toddlers, and specific restaurant options tailored for picky MIL, two families, two 1-year-olds, and a 4-year-old. Includes “upscale-but-relaxed” birthday dinner on Sept 1 in Paris.</p>
 
-  <div class="layout">
-    <aside class="panel">
-      <div class="search">
-        <input id="q" type="text" placeholder="Search places or addresses...">
-        <button onclick="doSearch()">Search</button>
-      </div>
-      <div class="filters">
-        <label><input type="checkbox" id="showDining" checked onchange="renderList()"> Dining</label>
-        <label><input type="checkbox" id="showNonFood" checked onchange="renderList()"> Non‑Food</label>
-        <button onclick="exportCSV()" class="download">Export CSV</button>
-      </div>
+<div class="day">
+  <h2>Saturday, Aug 30 – Arrival in Paris</h2>
+  <ul>
+    <li><span class="venue">Hotel Check-in</span> – Near the Seine.</li>
+    <li><span class="venue">Stroll along Île de la Cité</span> – Notre-Dame, Sainte-Chapelle.</li>
+    <li><span class="venue">Le Saint Régis</span> <span class="desc">(classic French bistro; kid-friendly service)</span></li>
+    <li><span class="venue">Les Philosophes</span> <span class="desc">(great onion soup; casual, good for picky eaters)</span></li>
+  </ul>
+</div>
 
-      <div class="list" id="list"></div>
+<div class="day">
+  <h2>Sunday, Aug 31 – Paris Sights</h2>
+  <ul>
+    <li><span class="venue">Eiffel Tower Morning Visit</span></li>
+    <li><span class="venue">Lunch at Café Constant</span> <span class="desc">(upscale casual French; manageable portions, warm atmosphere)</span></li>
+    <li><span class="venue">Afternoon Nap Break</span></li>
+    <li><span class="venue">Tuileries Garden</span> – Carousel & playground for kids.</li>
+    <li><span class="venue">Dinner: Chez Janou</span> <span class="desc">(lively Provençal; broad menu, great for groups)</span></li>
+  </ul>
+</div>
 
-      <footer>
-        <div>Tip: click any address to open in Google Maps. Use the CSV export to import into Wanderlog.</div>
-      </footer>
-    </aside>
+<div class="day">
+  <h2>Monday, Sept 1 – Birthday in Paris</h2>
+  <ul>
+    <li><span class="venue">Morning at Musée d’Orsay</span></li>
+    <li><span class="venue">Lunch at La Fontaine de Mars</span> <span class="desc">(charming, upscale-but-relaxed; Obama ate here)</span></li>
+    <li><span class="venue">Rest at hotel</span></li>
+    <li><span class="venue">Evening Seine River stroll</span></li>
+    <li><span class="venue">Birthday Dinner at Les Ombres</span> <span class="desc">(beautiful Eiffel Tower views; refined but welcoming)</span></li>
+  </ul>
+</div>
 
-    <main class="panel content">
-      <div class="grid-two">
-        <div>
-          <h2>Day-by-day itinerary (high level)</h2>
-          <div class="day"><strong>Aug 29</strong> — SFO → Paris (flight departs 14:40)</div>
-          <div class="day"><strong>Aug 30</strong> — Paris: arrival, Luxembourg Gardens, local bistro</div>
-          <div class="day"><strong>Aug 31</strong> — Paris: Louvre / Montmartre option</div>
-          <div class="day"><strong>Sep 1</strong> — Paris: birthday — Les Ombres dinner (upscale but relaxed)</div>
-          <div class="day"><strong>Sep 2</strong> — TGV Paris → Hendaye → San Sebastián</div>
-          <div class="day"><strong>Sep 3–6</strong> — San Sebastián: La Concha, pintxos, Monte Urgull, markets; day trip to Biarritz or Getaria</div>
-          <div class="day"><strong>Sep 7</strong> — Fly to Barcelona (evening)</div>
-          <div class="day"><strong>Sep 8–10</strong> — Barcelona: Sagrada Família, Park Güell, Gothic Quarter, beaches</div>
-          <div class="day"><strong>Sep 11</strong> — Fly BCN → SFO (depart 14:05)</div>
+<div class="day">
+  <h2>Tuesday, Sept 2 – Travel to San Sebastián</h2>
+  <ul>
+    <li><span class="venue">Check into hotel</span></li>
+    <li><span class="venue">La Concha Beach stroll</span></li>
+    <li><span class="venue">Tapas crawl: Gandarias</span> <span class="desc">(quality pintxos; bustling but organized)</span>, <span class="venue">La Cuchara de San Telmo</span> <span class="desc">(creative tapas; famous for foie)</span>, <span class="venue">Borda Berri</span> <span class="desc">(hearty, melt-in-your-mouth veal cheeks)</span></li>
+  </ul>
+</div>
 
-          <div class="cta">
-            <button onclick="window.print()">Print Itinerary</button>
-            <button onclick="downloadHTML()">Download HTML</button>
-          </div>
-        </div>
+<div class="day">
+  <h2>Wednesday, Sept 3 – San Sebastián</h2>
+  <ul>
+    <li><span class="venue">Monte Igueldo funicular</span> – Views + kids rides.</li>
+    <li><span class="venue">Lunch: Rekondo</span> <span class="desc">(Basque cuisine; massive wine cellar)</span></li>
+    <li><span class="venue">Afternoon siesta</span></li>
+    <li><span class="venue">Old Town wandering</span></li>
+    <li><span class="venue">Dinner: Bar Nestor</span> <span class="desc">(steak & tomato salad legend; small menu perfect for picky eaters)</span></li>
+  </ul>
+</div>
 
-        <div>
-          <h2>Quick lists</h2>
-          <div class="card-row">
-            <div style="flex:1">
-              <h3>Dining (selectable)</h3>
-              <div class="muted">Toggle dining in the left panel to filter.</div>
-            </div>
-          </div>
+<div class="day">
+  <h2>Thursday, Sept 4 – Barcelona Arrival</h2>
+  <ul>
+    <li><span class="venue">Hotel check-in</span></li>
+    <li><span class="venue">Late lunch: El Xampanyet</span> <span class="desc">(iconic cava & tapas; energetic but family-friendly)</span></li>
+    <li><span class="venue">Evening stroll in El Born</span></li>
+    <li><span class="venue">Dinner: Cal Pep</span> <span class="desc">(fresh seafood tapas; lively counter seating)</span></li>
+  </ul>
+</div>
 
-          <hr>
-          <h3>How to use</h3>
-          <ol class="muted">
-            <li>Search or filter items in the left column.</li>
-            <li>Click an address to open Google Maps.</li>
-            <li>Export CSV to import into Wanderlog or other trip planners.</li>
-          </ol>
-        </div>
-      </div>
-    </main>
-  </div>
+<div class="day">
+  <h2>Friday, Sept 5 – Barcelona</h2>
+  <ul>
+    <li><span class="venue">Morning: Sagrada Família</span></li>
+    <li><span class="venue">Lunch: Cervecería Catalana</span> <span class="desc">(well-rounded tapas menu; good for sharing)</span></li>
+    <li><span class="venue">Afternoon Park Güell</span></li>
+    <li><span class="venue">Dinner: Tapeo</span> <span class="desc">(modern tapas; smaller, cozy setting)</span></li>
+  </ul>
+</div>
 
-<script>
-// Data: places (name, address, city, category)
-const places = [
-  // Paris - Dining
-  {name:'Les Ombres', address:'27 Quai Jacques-Chirac, 75007 Paris, France', city:'Paris', category:'Dining'},
-  {name:'Le Coupe-Chou', address:'11 Rue de Lanneau, 75005 Paris, France', city:'Paris', category:'Dining'},
-  {name:'Le Comptoir du Relais', address:'9 Carrefour de l\'Odéon, 75006 Paris, France', city:'Paris', category:'Dining'},
-  {name:'La Caféothèque', address:'52 Rue de l\'Hôtel-de-Ville, 75004 Paris, France', city:'Paris', category:'Dining'},
-  {name:'Bread & Roses', address:'62 Rue Madame, 75006 Paris, France', city:'Paris', category:'Dining'},
-  {name:'Café Marly', address:'93 Rue de Rivoli, 75001 Paris, France', city:'Paris', category:'Dining'},
-  {name:'Le Fumoir', address:'6 Rue de l\'Amiral de Coligny, 75001 Paris, France', city:'Paris', category:'Dining'},
-  {name:'La Jacobine', address:'59–61 Rue Saint-André des Arts, 75006 Paris, France', city:'Paris', category:'Dining'},
-  {name:'Le Christine', address:'1 Rue Christine, 75006 Paris, France', city:'Paris', category:'Dining'},
-  // Paris - NonFood
-  {name:'Luxembourg Gardens', address:'75006 Paris, France', city:'Paris', category:'Non-Food'},
-  {name:'Notre-Dame (viewpoint)', address:'Parvis Notre-Dame – Pl. Jean-Paul II, 75004 Paris, France', city:'Paris', category:'Non-Food'},
-  {name:'Louvre Museum', address:'Rue de Rivoli, 75001 Paris, France', city:'Paris', category:'Non-Food'},
-  {name:'Musée d\'Orsay', address:'1 Rue de la Légion d\'Honneur, 75007 Paris, France', city:'Paris', category:'Non-Food'},
-  {name:'Sacré-Coeur Basilica', address:'35 Rue du Chevalier de la Barre, 75018 Paris, France', city:'Paris', category:'Non-Food'},
-  {name:'Montmartre Funicular', address:'Square Louise Michel, 75018 Paris, France', city:'Paris', category:'Non-Food'},
-  {name:'Seine River Cruise (boarding varies)', address:'Port de la Bourdonnais, 75007 Paris, France', city:'Paris', category:'Non-Food'},
-  // San Sebastián - Dining
-  {name:'Casa Gandarias', address:'C/ 31 de Agosto, 23, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  {name:'Bar Néstor', address:'Arrandegi Kalea (C/ Pescadería), 11, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  {name:'Bodegón Alejandro', address:'Calle Fermín Calbetón, 4, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  {name:'La Viña', address:'Calle 31 de Agosto, 3, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  {name:'Casa Urola', address:'Fermín Calbetón, 20, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  {name:'La Cepa', address:'31 de Agosto Kalea, 7–9, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  {name:'Arzak', address:'Alcalde J. Elósegui, 273, 20015 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Dining'},
-  // San Sebastián - NonFood
-  {name:'La Concha Beach', address:'Kontxa Pasealekua, Donostia, Spain', city:'San Sebastián', category:'Non-Food'},
-  {name:'Monte Urgull', address:'Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Non-Food'},
-  {name:'San Sebastián Aquarium', address:'Plaza de Carlos Blasco Imaz, 1, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Non-Food'},
-  {name:'San Martín Market', address:'Urbieta Kalea, 9, 20006 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Non-Food'},
-  {name:'Mercado de la Bretxa', address:'Aldamar Kalea, s/n, 20003 Donostia-San Sebastián, Spain', city:'San Sebastián', category:'Non-Food'},
-  {name:'Biarritz (day trip)', address:'Biarritz, France', city:'Biarritz', category:'Non-Food'},
-  {name:'Getaria (day trip)', address:'Getaria, Gipuzkoa, Spain', city:'Getaria', category:'Non-Food'},
-  // Barcelona - Dining
-  {name:'Cervecería Catalana', address:'Carrer de Mallorca, 236, 08008 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Can Culleretes', address:'Carrer d\'en Quintana, 5, 08002 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Cinc Sentits', address:'Carrer d\'Entença, 60, 08015 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'La Paradeta (Sagrada Família)', address:'Passatge de Simó, 18, 08025 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Tapas 24', address:'Carrer de la Diputació, 269, 08007 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Cal Pep', address:'Plaça de les Olles, 8, 08003 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'El Xampanyet', address:'Carrer de Montcada, 22, 08003 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Quimet & Quimet', address:'Carrer del Poeta Cabanyes, 25, 08004 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Can Majó', address:'Carrer l\'Almirall Aixada, 23, 08003 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  {name:'Bodega 1900', address:'Carrer de Tamarit, 91, 08015 Barcelona, Spain', city:'Barcelona', category:'Dining'},
-  // Barcelona - NonFood
-  {name:'Sagrada Família', address:'Carrer de Mallorca, 401, 08013 Barcelona, Spain', city:'Barcelona', category:'Non-Food'},
-  {name:'Park Güell', address:'Carrer d\'Olot, 08024 Barcelona, Spain', city:'Barcelona', category:'Non-Food'},
-  {name:'Gothic Quarter', address:'Barri Gòtic, Barcelona, Spain', city:'Barcelona', category:'Non-Food'},
-  {name:'Mercat de la Boqueria', address:'La Rambla, 91, 08001 Barcelona, Spain', city:'Barcelona', category:'Non-Food'},
-  {name:'Barceloneta Beach', address:'Barceloneta, Barcelona, Spain', city:'Barcelona', category:'Non-Food'},
-  {name:'Barcelona Aquarium', address:'Moll d\'Espanya del Port Vell, s/n, 08039 Barcelona, Spain', city:'Barcelona', category:'Non-Food'}
-];
-
-function mkMapsUrl(addr){
-  return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(addr);
-}
-
-function renderList(){
-  const container = document.getElementById('list');
-  container.innerHTML='';
-  const q = (document.getElementById('q').value||'').toLowerCase();
-  const showDining = document.getElementById('showDining').checked;
-  const showNonFood = document.getElementById('showNonFood').checked;
-  const filtered = places.filter(p=>{
-    if(p.category==='Dining' && !showDining) return false;
-    if(p.category==='Non-Food' && !showNonFood) return false;
-    if(q && !(p.name.toLowerCase().includes(q) || p.address.toLowerCase().includes(q) || p.city.toLowerCase().includes(q))) return false;
-    return true;
-  });
-  if(filtered.length===0){ container.innerHTML='<div class="muted">No items found.</div>'; return; }
-  filtered.forEach(p=>{
-    const el = document.createElement('div'); el.className='item';
-    el.innerHTML = `<h3>${p.name} <span class="badge">${p.category}</span></h3>
-      <div class="muted">${p.city}</div>
-      <div style="margin-top:6px"><a class="addr" href="${mkMapsUrl(p.address)}" target="_blank">${p.address}</a></div>`;
-    container.appendChild(el);
-  });
-}
-
-function doSearch(){ renderList(); }
-
-function exportCSV(){
-  const rows = [['Name','Address','City','Category']];
-  const items = document.querySelectorAll('#list .item');
-  if(items.length===0){ alert('No items in the list to export. Try toggling filters or searching.'); return; }
-  items.forEach(it=>{
-    const name = it.querySelector('h3').childNodes[0].nodeValue.trim();
-    const addr = it.querySelector('a.addr').innerText.trim();
-    const city = it.querySelector('.muted').innerText.trim();
-    const cat = it.querySelector('.badge').innerText.trim();
-    rows.push([name,addr,city,cat]);
-  });
-  const csv = rows.map(r=>r.map(c=>'"'+c.replace(/"/g,'""')+'"').join(',')).join('\n');
-  const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'itinerary_places.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-}
-
-function downloadHTML(){
-  const html = '<!doctype html>\n'+document.documentElement.outerHTML;
-  const blob = new Blob([html],{type:'text/html'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href=url; a.download='Europe_Family_Itinerary.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-}
-
-// initial render
-renderList();
-</script>
 </body>
 </html>

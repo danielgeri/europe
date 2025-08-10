@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
             populateCities();
             // Show the first city by default
             if (itineraryData.cities && Object.keys(itineraryData.cities).length > 0) {
-                document.querySelector('.tab-button').click();
+                // FIX 1: Call showCity directly with the first city's key.
+                // This is more reliable than simulating a click on a button that might not be ready.
+                const firstCityKey = Object.keys(itineraryData.cities)[0];
+                if (firstCityKey) {
+                    showCity(firstCityKey);
+                }
             }
         } catch (error) {
             console.error('Error loading itinerary data:', error);
@@ -47,10 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const city = itineraryData.cities[cityKey];
         const contentDiv = document.getElementById('itinerary-content');
 
-        // ERROR FIX: Iterate over Object.values() because city.schedule is an object, not an array.
         const scheduleHtml = Object.values(city.schedule).map(day => {
             const eventsHtml = day.events.map(event => {
-                // ROBUSTNESS FIX: Use data attributes to safely store JSON details, avoiding syntax errors from inline JS.
                 const detailsJson = JSON.stringify(event.details || {}).replace(/'/g, "&apos;");
                 return `
                     <li>
@@ -91,10 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} cityKey - The key for the current city.
      */
     function setupMap(cityKey) {
+        // FIX 2: Check if the Leaflet library (L) has loaded. If not, hide the map and exit.
+        if (typeof L === 'undefined') {
+            console.warn('Leaflet library (L) not loaded. Map functionality is disabled.');
+            const mapContainer = document.getElementById('map-container');
+            if (mapContainer) {
+                mapContainer.style.display = 'none'; // Hide the map container
+            }
+            return; // Stop the function here
+        }
+
         const city = itineraryData.cities[cityKey];
         if (map) {
             map.remove();
         }
+
+        // Make sure map container is visible if it was previously hidden
+        const mapContainer = document.getElementById('map-container');
+        if (mapContainer) mapContainer.style.display = 'block';
+
         map = L.map('map').setView(city.map_center, city.zoom_level);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -105,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         markers[cityKey] = [];
         
-        // ERROR FIX: Iterate over Object.values() here as well to add map markers.
         Object.values(city.schedule).forEach(day => {
             day.events.forEach(event => {
                 if (event.coords) {
@@ -178,10 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('details-modal').style.display = 'none';
     }
     
-    // Add closeModal to the window object so it can be called from the HTML button.
     window.closeModal = closeModal;
 
-    // Add a global click listener to close the modal by clicking on the background overlay.
     window.addEventListener('click', (event) => {
         const modal = document.getElementById('details-modal');
         if (event.target === modal) {
