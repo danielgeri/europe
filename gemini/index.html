@@ -3,28 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Travel Itinerary | Paris, San Sebastián, Barcelona</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
-        integrity="sha512-h9Fcoyv8lLhHhfaAImGSAqlQzF/ccZK5GmMvemrI9J7/l1XbTe/NTbTMxVpMCh3OKbtJdjsP4eD4A4B2U1YavA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
-        integrity="sha512-puJW3E/qXDqYp9IfhAI5iXCNpb8GF/iOFsZTcpT/SJRJlLDE3Q/Gz9TCoY/KfZnaM/DwpSAgP/H9HziDJxpbA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <title>A European Celebration: Paris, San Sebastián & Barcelona</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        .city-section {
+            margin-bottom: 40px;
+        }
+        .city-header {
+            font-size: 2rem;
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .day {
+            border: 1px solid #dee2e6;
+            border-left: 5px solid #3498db;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .day h3 {
+            font-size: 1.5rem;
+            color: #2980b9;
+            margin-top: 0;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        strong {
+            color: #2c3e50;
+            min-width: 120px;
+            display: inline-block;
+        }
+        .icon {
+            margin-right: 10px;
+        }
+        .travel-info {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #34495e;
+        }
+    </style>
 </head>
 <body>
-    <div id="map"></div>
 
-    <aside id="sidebar">
-        <div id="sidebar-content">
+    <div class="container">
+        <header>
+            <h1>A European Celebration</h1>
+            <p>Your Bespoke Itinerary for Paris, San Sebastián & Barcelona</p>
+        </header>
+
+        <section class="city-section">
+            <h2 class="city-header">Paris, France (August 29 - September 2)</h2>
+
+            <div class="day">
+                <h3><span class="icon">✈️</span> Friday, August 29: Transatlantic Journey</h3>
+                <ul>
+                    <li><strong>Activity:</strong> Depart for Paris!</li>
+                    <li class="travel-info"><strong>Flight:</strong> United Airlines (Confirmation: MZXXVE)<br><strong>Departure:</strong> SFO at 2:40 PM</li>
+                </ul>
             </div>
-    </aside>
 
-    <script defer src="script.js"></script>
+            <div class="day">
+                <h3><span class="icon">🥐</span> Saturday, August 30: Parisian Arrival</h3>
+                <ul>
+                    <li><strong>10:25 AM:</strong> Land at Paris (CDG). Clear customs and gather luggage.</li>
+                    <li><strong>Lodging:</strong> Travel to and check into your hotel at <strong>9 Rue Racine, 75006 Paris</strong>.</li>
+                    <li><strong>Afternoon:</strong> Relaxed stroll to the beautiful <strong>Jardin du Luxembourg</strong>. Let the kids run around, see the pond, and enjoy the classic Parisian park atmosphere.</li>
+                    <li><strong>Dinner:</strong> <strong>Le Procope</strong>, a historic and atmospheric restaurant suitable for a special first-night meal.</li>
+                </ul>
+            </div>
+
+            <div class="day">
+                <h3><span class="icon">🎨</span> Sunday, August 31: Art &amp; River Views</h3>
+                <ul>
+                    <li><strong>Morning:</strong> Visit the <strong>Louvre Museum</strong>. Pre-book tickets for a specific time slot. Focus on a few key wings to avoid overwhelming the kids (e.g., Egyptian antiquities, Mona Lisa).</li>
+                    <li><strong>Lunch:</strong> Casual lunch at a crêperie in the Latin Quarter.</li>
+                    <li><strong>Afternoon:</strong> A relaxing <strong>Seine River Cruise</strong>. It’s a fantastic way to see the city's landmarks without tiring out little legs.</li>
+                    <li><strong>Dinner:</strong> Explore dining options in the vibrant Saint-Germain-des-Prés neighborhood near your hotel.</li>
+                </ul>
+            </div>
+            
+            <div class="day">
+                <h3><span class="icon">🎂</span> Monday, September 1: Birthday in Montmartre</h3>
+                <ul>
+                    <li><strong>Morning:</strong> Explore <strong>Montmartre</strong>. Take the funicular up to the <strong>Sacré-Cœur Basilica</strong> for stunning city views. Wander through Place du Tertre to see the artists.</li>
+                    <li><strong>Lunch:</strong> Find a charming bistro in Montmartre for a memorable meal.</li>
+                    <li><strong>Afternoon:</strong> Visit the Eiffel Tower. Pre-booking is essential. Consider just going to the second floor for great views without the longer queues for the summit.</li>
+                    <li><strong>Birthday Dinner:</strong> Celebrate the Matriarch's 70th Birthday! A special dinner at <strong>L'Ambroisie</strong> or another highly-rated restaurant (reservations are a must).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="city-section">
+            <h2 class="city-header">San Sebastián, Spain (September 2 - 7)</h2>
+            
+            <div class="day">
+                <h3><span class="icon">🚆</span> Tuesday, September 2: Travel to Basque Country</h3>
+                <ul>
+                    <li><strong>Morning:</strong> Enjoy a final Parisian breakfast.</li>
+                    <li><strong>Travel:</strong> Head to the station for your train to Hendaye.</li>
+                     <li class="travel-info"><strong>Train:</strong> TGV (Confirmation: RAWQ82)<br><strong>Departs:</strong> Paris at 12:11 PM<br><strong>Arrives:</strong> Hendaye at 4:47 PM</li>
+                    <li><strong>Evening:</strong> Take the local train from Hendaye to San Sebastián. Check into your lodging at <strong>Easo Kalea, 27</strong> and settle in.</li>
+                    <li><strong>Dinner:</strong> First taste of Basque country with a Pintxos crawl in the Old Town (Parte Vieja). Fun for the adults, and kids can snack on bread and simpler items.</li>
+                </ul>
+            </div>
+
+            <div class="day">
+                <h3><span class="icon">🏖️</span> Wednesday, September 3: Beach &amp; Views</h3>
+                 <ul>
+                    <li><strong>Morning:</strong> Relax at the famous <strong>La Concha Beach</strong>. It's well-protected and great for families.</li>
+                    <li><strong>Lunch:</strong> Casual beachfront café.</li>
+                    <li><strong>Afternoon:</strong> Take the funicular up <strong>Monte Igueldo</strong> for the iconic panoramic view of the bay and the vintage amusement park at the top.</li>
+                    <li><strong>Dinner:</strong> Explore more pintxos bars or have a sit-down meal at <strong>Ganbara</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="day">
+                <h3><span class="icon">🐟</span> Thursday, September 4: Old Town Charm</h3>
+                 <ul>
+                    <li><strong>Morning:</strong> Wander through the <strong>Parte Vieja (Old Town)</strong>, exploring the narrow streets, Plaza de la Constitución, and the harbor.</li>
+                    <li><strong>Lunch:</strong> Another round of pintxos, trying different bars.</li>
+                    <li><strong>Afternoon:</strong> Visit the <strong>San Telmo Museoa</strong> to learn about Basque culture and history.</li>
+                    <li><strong>Dinner:</strong> A celebratory meal at a renowned restaurant like <strong>Arzak</strong> or <strong>Akelarre</strong> (book months in advance) for the foodies, or a more relaxed but excellent option like <strong>Bodega Donostiarra</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="day">
+                <h3><span class="icon">🚗</span> Friday, September 5: Coastal Day Trip</h3>
+                <ul>
+                    <li><strong>Full Day:</strong> Day trip to the charming fishing village of <strong>Getaria</strong> (hometown of Balenciaga) or the chic French town of <strong>Biarritz</strong>. Getaria is famous for its grilled fish restaurants.</li>
+                    <li><strong>Dinner:</strong> Back in San Sebastián for a relaxed dinner.</li>
+                </ul>
+            </div>
+
+            <div class="day">
+                <h3><span class="icon">🛍️</span> Saturday, September 6: Relax &amp; Explore</h3>
+                <ul>
+                    <li><strong>Activity:</strong> A flexible day. Revisit a favorite spot, go shopping in the central district, or explore Zurriola Beach, known for its surfing scene.</li>
+                    <li><strong>Dinner:</strong> Final pintxos crawl to hit any bars you missed.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="city-section">
+            <h2 class="city-header">Barcelona, Spain (September 7 - 11)</h2>
+            
+            <div class="day">
+                <h3><span class="icon">✈️</span> Sunday, September 7: ¡Hola Barcelona!</h3>
+                <ul>
+                    <li><strong>Morning:</strong> Enjoy a final Basque breakfast and some last-minute souvenir shopping.</li>
+                    <li><strong>Travel:</strong> Head to San Sebastián Airport (EAS) for your flight.</li>
+                    <li class="travel-info"><strong>Flight:</strong> Vueling Airlines (Confirmation: VY2487)<br><strong>Departs:</strong> EAS at 5:55 PM<br><strong>Arrives:</strong> BCN at 7:00 PM</li>
+                    <li><strong>Evening:</strong> Check into your lodging at <strong>Avinguda Diagonal, 438</strong>. Have a simple, late dinner near your hotel.</li>
+                </ul>
+            </div>
+
+             <div class="day">
+                <h3><span class="icon">🏛️</span> Monday, September 8: Gaudí's Masterpieces</h3>
+                 <ul>
+                    <li><strong>Morning:</strong> Visit the iconic <strong>Sagrada Família</strong>. This is a must-see. Book tickets far in advance for a timed entry.</li>
+                    <li><strong>Lunch:</strong> Tapas near Sagrada Família.</li>
+                    <li><strong>Afternoon:</strong> Explore <strong>Park Güell</strong>, another Gaudí marvel with whimsical architecture and great views. It's a good place for the kids to have some space.</li>
+                    <li><strong>Dinner:</strong> Dinner in the Gràcia neighborhood, known for its bohemian vibe and excellent restaurants.</li>
+                </ul>
+            </div>
+
+             <div class="day">
+                <h3><span class="icon"> Gothic Quarter &amp; Seaside</h3>
+                 <ul>
+                    <li><strong>Morning:</strong> Get lost in the enchanting lanes of the <strong>Gothic Quarter (Barri Gòtic)</strong>. See the Barcelona Cathedral and Plaça Reial.</li>
+                    <li><strong>Lunch:</strong> Visit the famous <strong>La Boqueria Market</strong> for a vibrant, sensory lunch experience. Grab fresh juices, tapas, and snacks.</li>
+                    <li><strong>Afternoon:</strong> Stroll down <strong>La Rambla</strong> towards the sea and the Barceloneta beach area.</li>
+                    <li><strong>Dinner:</strong> Paella dinner in Barceloneta with a view of the Mediterranean.</li>
+                </ul>
+            </div>
+
+             <div class="day">
+                <h3><span class="icon">🎨</span> Wednesday, September 10: Art &amp; Magic</h3>
+                 <ul>
+                    <li><strong>Morning:</strong> Visit the <strong>Picasso Museum</strong> (Museu Picasso), especially interesting if you're a fan of his early works.</li>
+                    <li><strong>Lunch:</strong> Casual lunch in the El Born district.</li>
+                    <li><strong>Afternoon:</strong> A relaxed afternoon, perhaps shopping on Passeig de Gràcia to see other Gaudí buildings like Casa Batlló and Casa Milà from the outside.</li>
+                    <li><strong>Evening:</strong> Experience the <strong>Magic Fountain of Montjuïc</strong> light and music show (check schedule, as it doesn't run every night).</li>
+                </ul>
+            </div>
+            
+            <div class="day">
+                <h3><span class="icon">✈️</span> Thursday, September 11: Adiós España</h3>
+                <ul>
+                    <li><strong>Morning:</strong> Enjoy a final Spanish breakfast. Pick up any last-minute gifts.</li>
+                    <li><strong>Travel:</strong> Head to Barcelona Airport (BCN) for your flight home.</li>
+                    <li class="travel-info"><strong>Flight:</strong> Iberia (Confirmation: J5BFD)<br><strong>Departure:</strong> BCN at 2:05 PM</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
 
 </body>
 </html>
